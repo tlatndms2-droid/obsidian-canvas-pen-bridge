@@ -4,3 +4,10 @@
 .cpb-pen-input:not(.cdt-drawing) .canvas-node .markdown-preview-view {
   touch-action: none;
 }
+
+/* While editing with a pen, border hit areas must not cover the first/last
+   characters. A blank Canvas click exits editing and restores these handles. */
+.cpb-pen-input:not(.cdt-drawing):has(.canvas-node.is-editing) .canvas-node-resizer,
+.cpb-pen-input:not(.cdt-drawing):has(.canvas-node.is-editing) .canvas-node-connection-point {
+  pointer-events: none;
+}

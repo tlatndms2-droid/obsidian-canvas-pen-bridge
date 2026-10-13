@@ -6,7 +6,9 @@ const manifest = require('../manifest.json');
 if (manifest.version !== require('../package.json').version) throw Error('Version mismatch');
 const bridge = fs.readFileSync(path.join(root, 'src/pen-bridge.js'), 'utf8');
 const source = fs.readFileSync(path.join(root, 'src/main.js'), 'utf8');
-const bundled = source.replace("require('./pen-bridge')", `(() => { const module = { exports: {} };\n${bridge}\nreturn module.exports; })()`);
+const textSelection = fs.readFileSync(path.join(root, 'src/text-selection.js'), 'utf8');
+const bundled = source.replace("require('./pen-bridge')", `(() => { const module = { exports: {} };\n${bridge}\nreturn module.exports; })()`)
+  .replace("require('./text-selection')", `(() => { const module = { exports: {} };\n${textSelection}\nreturn module.exports; })()`);
 new Function('require', 'module', bundled);
 fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
 fs.writeFileSync(path.join(root, 'dist/main.js'), bundled);

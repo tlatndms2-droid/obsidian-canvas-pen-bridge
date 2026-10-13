@@ -1,7 +1,7 @@
 {
   "id": "canvas-pen-bridge",
   "name": "Canvas Pen Bridge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minAppVersion": "1.14.4",
   "description": "Keep pen pressure while using Windows Ink to manipulate Canvas cards.",
   "author": "tlatndms2-droid",

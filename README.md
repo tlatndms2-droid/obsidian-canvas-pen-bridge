@@ -2,7 +2,7 @@
 
 Windows Ink를 켠 Wacom 펜으로 Obsidian Canvas 카드를 조작할 수 있게 하는 별도 데스크톱 플러그인입니다. 드로잉 툴바 없이도 작동합니다.
 
-버전: **0.1.0** · 최소 Obsidian: **1.14.4** · 검증 환경: Windows + Wacom, Windows Ink ON.
+버전: **0.1.1** · 최소 Obsidian: **1.14.4** · 검증 환경: Windows + Wacom, Windows Ink ON.
 
 ## 설치
 
@@ -11,7 +11,7 @@ Windows Ink를 켠 Wacom 펜으로 Obsidian Canvas 카드를 조작할 수 있�
 3. 커뮤니티 플러그인에서 **Canvas Pen Bridge**를 켭니다.
 4. Wacom의 Obsidian 설정에서 Windows Ink를 켠 상태로 Canvas를 사용합니다.
 
-[Release 및 설치 파일](https://github.com/tlatndms2-droid/obsidian-canvas-pen-bridge/releases/tag/0.1.0)
+[Release 및 설치 파일](https://github.com/tlatndms2-droid/obsidian-canvas-pen-bridge/releases/tag/0.1.1)
 
 ## 사용 방법
 
@@ -29,6 +29,12 @@ Windows Ink를 켠 Wacom 펜으로 Obsidian Canvas 카드를 조작할 수 있�
 | Ctrl + 펜 우클릭 좌우 드래그 | 오른쪽 확대, 왼쪽 축소 |
 
 새 버튼·패널은 없습니다. 마우스는 기존 Canvas 방식으로 사용합니다.
+
+## 펜으로 글자 선택
+
+Canvas 카드는 편집 모드로 들어간 뒤 글자를 드래그합니다. 일반 Markdown 문서는 편집·읽기 화면에서 글자를 드래그합니다. 여러 줄과 띄어쓰기를 포함해 선택할 수 있고, 선택 후 펜 우클릭으로 복사 메뉴를 사용할 수 있습니다.
+
+카드를 펜으로 편집하는 동안 경계의 크기 조절점은 글자 선택을 가로채지 않습니다. Canvas 빈 공간을 눌러 편집을 끝내면 카드 이동·크기 조절로 돌아갑니다. 글자 선택만으로 문서 내용이 바뀌지는 않습니다.
 
 ## 드로잉 툴바와 함께 사용
 
