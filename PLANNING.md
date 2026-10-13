@@ -31,7 +31,7 @@ Windows Ink ON → Canvas에서 펜으로 카드 선택/이동/크기 조절/연
 Windows Ink 영구 비활성화, 필압 포기, Canvas 데이터 형식 변경, 무관한 카드/연결선 수정, 원인 확인 없는 전역 포인터 이벤트 변환, 승인 없는 드로잉 툴바 기능 변경, 신규 UI/기능 추가.
 
 ## 구현 판단
-원인과 구현 방식은 미확정. Codex가 공식 Obsidian API(`https://docs.obsidian.md/`)와 비공식 내부 접근을 구분해 검증한다. 별도 호환성 플러그인 또는 기존 플러그인 수정 여부도 검증 후 결정한다. 코드 변경은 해결안 승인 후 진행한다.
+2026-10-13: 원인 조사와 해결안 승인 후 별도 Canvas Pen Bridge를 구현했다. 기본 Canvas의 mouse/isPrimary 제한과 본문 스크롤 취소를 보완하며 기존 드로잉 툴바는 수정하지 않는다. 공식 플러그인 API와 비공식 Canvas runtime을 구분한다. 현재 결과는 HANDOFF.md와 TEST_MATRIX.md를 따른다.
 
 ## 완료 기준
 TEST_MATRIX의 필수 시나리오를 실제 Wacom 장치에서 통과하고 필압·마우스·Canvas 데이터 무결성 회귀가 없어야 한다. 미실행 항목을 통과로 기록하지 않는다.

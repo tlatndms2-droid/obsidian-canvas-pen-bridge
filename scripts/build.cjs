@@ -1,0 +1,14 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.join(__dirname, '..');
+const manifest = require('../manifest.json');
+if (manifest.version !== require('../package.json').version) throw Error('Version mismatch');
+const bridge = fs.readFileSync(path.join(root, 'src/pen-bridge.js'), 'utf8');
+const source = fs.readFileSync(path.join(root, 'src/main.js'), 'utf8');
+const bundled = source.replace("require('./pen-bridge')", `(() => { const module = { exports: {} };\n${bridge}\nreturn module.exports; })()`);
+new Function('require', 'module', bundled);
+fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
+fs.writeFileSync(path.join(root, 'dist/main.js'), bundled);
+for (const file of ['manifest.json', 'styles.css']) fs.copyFileSync(path.join(root, file), path.join(root, 'dist', file));
+console.log(`Built Canvas Pen Bridge ${manifest.version}`);

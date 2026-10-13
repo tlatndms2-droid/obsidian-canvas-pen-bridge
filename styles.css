@@ -1,0 +1,6 @@
+/* The first scrolling ancestor decides direct-manipulation behavior before
+   pointerdown. Pen hover identifies the input in advance. Keep native mouse,
+   touch, editing and Drawing toolbar behavior outside this narrow selector. */
+.cpb-pen-input:not(.cdt-drawing) .canvas-node .markdown-preview-view {
+  touch-action: none;
+}
